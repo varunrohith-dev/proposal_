@@ -132,13 +132,10 @@ export default function App() {
         {activeView === 'letter' && (
           <OpeningLetter
             letterData={letterData}
-            setLetterData={setLetterData}
             onStartStory={() => {
               setCurrentIndex(0);
               setActiveView('story');
             }}
-            onOpenStudio={() => setActiveView('manage')}
-            speakText={speakText}
           />
         )}
 
