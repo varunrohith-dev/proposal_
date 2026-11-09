@@ -5,12 +5,8 @@ import {
   ChevronRight, 
   Heart, 
   Sparkles, 
-  Volume2, 
-  Edit3, 
-  Camera, 
   Smile, 
   Gem, 
-  Sliders, 
   ArrowRight,
   Maximize2,
   Minimize2,
@@ -24,20 +20,10 @@ import { romanticAudio } from '../utils/audioSynthesizer';
 
 export default function PhotoStory({
   photos,
-  setPhotos,
   currentIndex,
   setCurrentIndex,
-  onFinishStory,
-  onOpenStudio,
-  speakText,
-  isTtsEnabled
+  onFinishStory
 }) {
-  const [isEditingFrame, setIsEditingFrame] = useState(false);
-  const [editTitle, setEditTitle] = useState('');
-  const [editHeading, setEditHeading] = useState('');
-  const [editCaption, setEditCaption] = useState('');
-  const [editDescription, setEditDescription] = useState('');
-  const [editCategory, setEditCategory] = useState('');
   const [isHeartBurst, setIsHeartBurst] = useState(false);
   const [isAutoPlay, setIsAutoPlay] = useState(false);
   const [fitMode, setFitMode] = useState('contain'); // 'contain' | 'cover'
@@ -45,21 +31,6 @@ export default function PhotoStory({
 
   const currentPhoto = photos[currentIndex] || photos[0];
   const total = photos.length;
-
-  // Sync edit fields whenever photo changes
-  useEffect(() => {
-    if (currentPhoto) {
-      setEditTitle(currentPhoto.title || '');
-      setEditHeading(currentPhoto.heading || '');
-      setEditCaption(currentPhoto.caption || '');
-      setEditDescription(currentPhoto.description || '');
-      setEditCategory(currentPhoto.category || 'Solo Photo');
-
-      if (isTtsEnabled) {
-        speakText(`${currentPhoto.title}. ${currentPhoto.caption}`);
-      }
-    }
-  }, [currentIndex, currentPhoto?.id]);
 
   // Slideshow Auto-Play timer
   useEffect(() => {
@@ -84,7 +55,6 @@ export default function PhotoStory({
   // Keyboard navigation
   useEffect(() => {
     const handleKeyDown = (e) => {
-      if (isEditingFrame) return;
       if (e.key === 'ArrowRight' || e.key === ' ') {
         handleNext();
       } else if (e.key === 'ArrowLeft') {
@@ -93,7 +63,7 @@ export default function PhotoStory({
     };
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [currentIndex, isEditingFrame]);
+  }, [currentIndex]);
 
   const handleNext = () => {
     romanticAudio.playPageTurn();
@@ -115,37 +85,6 @@ export default function PhotoStory({
     romanticAudio.playHeartChime();
     setIsHeartBurst(true);
     setTimeout(() => setIsHeartBurst(false), 900);
-  };
-
-  const handleSaveFrameEdits = () => {
-    setPhotos(prev =>
-      prev.map((p, idx) =>
-        idx === currentIndex
-          ? {
-              ...p,
-              title: editTitle,
-              heading: editHeading,
-              caption: editCaption,
-              description: editDescription,
-              category: editCategory
-            }
-          : p
-      )
-    );
-    setIsEditingFrame(false);
-    romanticAudio.playHeartChime();
-  };
-
-  const handleInlinePhotoReplace = (e) => {
-    const file = e.target.files?.[0];
-    if (!file) return;
-    const url = URL.createObjectURL(file);
-    setPhotos(prev =>
-      prev.map((p, idx) =>
-        idx === currentIndex ? { ...p, url, name: file.name } : p
-      )
-    );
-    romanticAudio.playHeartChime();
   };
 
   const toggleFullscreen = () => {
@@ -175,25 +114,17 @@ export default function PhotoStory({
   return (
     <div className="min-h-[88vh] flex flex-col justify-between max-w-6xl mx-auto px-4 py-4 md:py-6 relative z-10">
       
-      {/* Top Header Bar: Progress Indicator & Quick Controls */}
-      <div className="flex flex-col sm:flex-row items-center justify-between gap-3 mb-4">
+      {/* Top Header Bar: Progress Indicator & Controls */}
+      <div className="flex items-center justify-between gap-3 mb-4">
         
         {/* Frame Progress Badge */}
         <div className="flex items-center gap-3">
           <div className="px-3.5 py-1.5 rounded-full bg-purple-950/70 border border-purple-400/30 text-purple-200 text-xs font-mono font-semibold tracking-wider shadow-purple-glow">
             FRAME <span className="text-white font-bold">{String(currentIndex + 1).padStart(2, '0')}</span> / {total}
           </div>
-
-          <div className="hidden sm:flex items-center gap-1.5">
-            <span className={`px-3 py-1 rounded-full text-xs font-medium border flex items-center gap-1.5 bg-gradient-to-r ${categoryInfo.badgeColor}`}>
-              {getCategoryIcon(categoryInfo.id)}
-              <span>{categoryInfo.label}</span>
-              <span className="opacity-60 text-[10px]">({categoryInfo.subtitle})</span>
-            </span>
-          </div>
         </div>
 
-        {/* Right tools: Auto-play, Fullscreen, In-place edit toggle & Studio link */}
+        {/* Right tools: Auto-play, Fullscreen */}
         <div className="flex items-center gap-2">
           {/* Auto-Play Toggle */}
           <button
@@ -216,29 +147,6 @@ export default function PhotoStory({
             title="Toggle Fullscreen"
           >
             {isFullscreen ? <Minimize2 className="w-4 h-4" /> : <Maximize2 className="w-4 h-4" />}
-          </button>
-
-          {/* Voice Narration */}
-          <button
-            onClick={() => speakText(`${currentPhoto.title}. ${currentPhoto.caption}. ${currentPhoto.description}`)}
-            className="flex items-center gap-1.5 px-3 py-1.5 rounded-full glass-panel border border-purple-500/30 text-xs text-purple-200 hover:text-white hover:border-purple-300 transition-all"
-            title="Read this frame's memory aloud"
-          >
-            <Volume2 className="w-3.5 h-3.5 text-purple-400" />
-            <span className="hidden md:inline">Voice Narration</span>
-          </button>
-
-          {/* Edit Frame */}
-          <button
-            onClick={() => setIsEditingFrame(!isEditingFrame)}
-            className={`flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium border transition-all ${
-              isEditingFrame 
-                ? 'bg-emerald-600/30 border-emerald-400 text-emerald-200 shadow-md' 
-                : 'glass-panel border-purple-500/30 text-purple-200 hover:text-white hover:border-purple-300'
-            }`}
-          >
-            <Edit3 className="w-3.5 h-3.5" />
-            <span>{isEditingFrame ? "Done Editing" : "Edit Captions"}</span>
           </button>
         </div>
       </div>
@@ -304,149 +212,42 @@ export default function PhotoStory({
                     <Crop className="w-3 h-3 text-purple-300" />
                     <span className="hidden sm:inline">{fitMode === 'contain' ? 'Fit' : 'Fill'}</span>
                   </button>
-
-                  {/* Replace Photo Label */}
-                  <label className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-black/60 backdrop-blur-md border border-purple-400/40 text-purple-200 text-xs hover:border-purple-300 cursor-pointer hover:scale-105 transition-all shadow-md">
-                    <Camera className="w-3.5 h-3.5 text-purple-300" />
-                    <span>Replace Photo</span>
-                    <input
-                      type="file"
-                      accept="image/*"
-                      onChange={handleInlinePhotoReplace}
-                      className="hidden"
-                    />
-                  </label>
                 </div>
               </div>
             </div>
 
-            {/* Right: Romantic Story & Editable Captions */}
+            {/* Right: Romantic Story */}
             <div className="lg:col-span-5 p-6 md:p-8 flex flex-col justify-between bg-gradient-to-b from-[#130526]/90 to-[#0a0215]/95 backdrop-blur-md border-t lg:border-t-0 lg:border-l border-purple-500/20">
               
-              {!isEditingFrame ? (
-                /* Display Mode */
-                <div className="space-y-5 my-auto">
-                  
-                  {/* Category & Tag */}
-                  <div className="flex items-center justify-between">
-                    <span className={`px-3 py-1 rounded-full text-xs font-semibold border flex items-center gap-1.5 bg-gradient-to-r ${categoryInfo.badgeColor}`}>
-                      {getCategoryIcon(categoryInfo.id)}
-                      <span>{categoryInfo.label}</span>
-                    </span>
-                    <span className="text-xs font-mono text-purple-300/60 tracking-wider">
-                      ✦ {currentPhoto.tag || "Precious Memory"}
-                    </span>
-                  </div>
-
-                  {/* Title */}
-                  <div>
-                    <h2 className="text-2xl md:text-3xl font-serifDisplay font-bold text-white tracking-wide leading-snug">
-                      {currentPhoto.title}
-                    </h2>
-                    <h3 className="text-sm font-sans font-medium text-purple-300/80 mt-1">
-                      {currentPhoto.heading}
-                    </h3>
-                  </div>
-
-                  {/* Romantic Caption Quote */}
-                  <div className="relative pl-4 border-l-2 border-purple-400/60 py-1">
-                    <p className="font-romantic text-2xl md:text-3xl text-purple-200 tracking-wide leading-relaxed">
-                      "{currentPhoto.caption}"
-                    </p>
-                  </div>
-
-                  {/* Description */}
-                  <div className="pt-2 text-xs md:text-sm text-purple-200/80 leading-relaxed font-sans">
-                    <p>{currentPhoto.description}</p>
-                  </div>
-
-                  {/* Gentle reminder */}
-                  <div className="pt-3 flex items-center gap-2 text-[11px] text-purple-300/50">
-                    <Sparkles className="w-3 h-3 text-purple-400" />
-                    <span>Memory dedicated to Joma with all my heart</span>
-                  </div>
+              <div className="space-y-5 my-auto">
+                {/* Title */}
+                <div>
+                  <h2 className="text-2xl md:text-3xl font-serifDisplay font-bold text-white tracking-wide leading-snug">
+                    {currentPhoto.title}
+                  </h2>
+                  <h3 className="text-sm font-sans font-medium text-purple-300/80 mt-1">
+                    {currentPhoto.heading}
+                  </h3>
                 </div>
-              ) : (
-                /* Inline Frame Editor */
-                <div className="space-y-3.5 my-auto text-xs animate-fade-in">
-                  <div className="flex items-center justify-between pb-1 border-b border-purple-500/20">
-                    <span className="font-semibold text-purple-200 uppercase tracking-wider text-[11px]">
-                      Edit Frame #{currentIndex + 1}
-                    </span>
-                    <span className="text-[10px] text-purple-400">Customizable in real-time</span>
-                  </div>
 
-                  <div>
-                    <label className="block text-purple-300 font-semibold mb-1">Category</label>
-                    <select
-                      value={editCategory}
-                      onChange={(e) => setEditCategory(e.target.value)}
-                      className="w-full px-3 py-1.5 rounded-xl glass-input text-xs"
-                    >
-                      {CATEGORIES.map(c => (
-                        <option key={c.id} value={c.id} className="bg-dark-900 text-white">
-                          {c.label} ({c.subtitle})
-                        </option>
-                      ))}
-                    </select>
-                  </div>
-
-                  <div>
-                    <label className="block text-purple-300 font-semibold mb-1">Photo Title</label>
-                    <input
-                      type="text"
-                      value={editTitle}
-                      onChange={(e) => setEditTitle(e.target.value)}
-                      className="w-full px-3 py-1.5 rounded-xl glass-input text-xs font-semibold text-purple-100"
-                    />
-                  </div>
-
-                  <div>
-                    <label className="block text-purple-300 font-semibold mb-1">Memory Heading</label>
-                    <input
-                      type="text"
-                      value={editHeading}
-                      onChange={(e) => setEditHeading(e.target.value)}
-                      className="w-full px-3 py-1.5 rounded-xl glass-input text-xs text-purple-200"
-                    />
-                  </div>
-
-                  <div>
-                    <label className="block text-purple-300 font-semibold mb-1">Romantic Caption</label>
-                    <input
-                      type="text"
-                      value={editCaption}
-                      onChange={(e) => setEditCaption(e.target.value)}
-                      className="w-full px-3 py-1.5 rounded-xl glass-input text-xs font-romantic text-xl text-purple-200"
-                    />
-                  </div>
-
-                  <div>
-                    <label className="block text-purple-300 font-semibold mb-1">Memory Description</label>
-                    <textarea
-                      rows={2}
-                      value={editDescription}
-                      onChange={(e) => setEditDescription(e.target.value)}
-                      className="w-full px-3 py-1.5 rounded-xl glass-input text-xs text-purple-200"
-                    />
-                  </div>
-
-                  <div className="flex justify-end gap-2 pt-2">
-                    <button
-                      onClick={() => setIsEditingFrame(false)}
-                      className="px-3 py-1.5 rounded-xl text-xs text-purple-300 hover:text-white"
-                    >
-                      Cancel
-                    </button>
-                    <button
-                      onClick={handleSaveFrameEdits}
-                      className="px-4 py-1.5 rounded-xl text-xs font-medium bg-gradient-to-r from-purple-600 to-fuchsia-600 text-white shadow-purple-glow hover:scale-105 transition-transform"
-                    >
-                      Save Frame
-                    </button>
-                  </div>
+                {/* Romantic Caption Quote */}
+                <div className="relative pl-4 border-l-2 border-purple-400/60 py-1">
+                  <p className="font-romantic text-2xl md:text-3xl text-purple-200 tracking-wide leading-relaxed">
+                    "{currentPhoto.caption}"
+                  </p>
                 </div>
-              )}
+
+                {/* Description */}
+                <div className="pt-2 text-xs md:text-sm text-purple-200/80 leading-relaxed font-sans">
+                  <p>{currentPhoto.description}</p>
+                </div>
+
+                {/* Gentle reminder */}
+                <div className="pt-3 flex items-center gap-2 text-[11px] text-purple-300/50">
+                  <Sparkles className="w-3 h-3 text-purple-400" />
+                  <span>Memory dedicated to Joma with all my heart</span>
+                </div>
+              </div>
 
               {/* Navigation Arrows Row */}
               <div className="pt-6 border-t border-purple-500/20 flex items-center justify-between gap-3">

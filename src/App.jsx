@@ -145,13 +145,9 @@ export default function App() {
         {activeView === 'story' && (
           <PhotoStory
             photos={photos}
-            setPhotos={setPhotos}
             currentIndex={currentIndex}
             setCurrentIndex={setCurrentIndex}
             onFinishStory={() => setActiveView('surprise')}
-            onOpenStudio={() => setActiveView('manage')}
-            speakText={speakText}
-            isTtsEnabled={isTtsEnabled}
           />
         )}
 

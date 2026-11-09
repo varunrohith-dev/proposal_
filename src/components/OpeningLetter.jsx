@@ -110,9 +110,6 @@ export default function OpeningLetter({
             <div className="flex flex-col items-center justify-center my-auto">
               <div className="relative flex items-center justify-center w-20 h-20 rounded-full bg-gradient-to-br from-purple-500 via-fuchsia-600 to-purple-800 shadow-[0_0_30px_rgba(168,85,247,0.7)] border-2 border-purple-200/50 group-hover:scale-110 transition-transform">
                 <Heart className="w-10 h-10 text-white fill-white animate-pulse" />
-                <span className="absolute -bottom-7 text-[11px] font-sans font-medium text-purple-200 bg-purple-950/90 px-3 py-0.5 rounded-full border border-purple-400/40 shadow-md">
-                  Click to Unfold 💜
-                </span>
               </div>
             </div>
 

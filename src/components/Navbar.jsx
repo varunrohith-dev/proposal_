@@ -76,23 +76,6 @@ export default function Navbar({
             <span>Grand Finale</span>
           </button>
         </nav>
-
-        {/* Right action controls */}
-        <div className="flex items-center gap-2">
-          {/* TTS Toggle */}
-          <button
-            onClick={toggleTts}
-            title={isTtsEnabled ? "Disable Voice Narration" : "Enable Romantic Voice Narration"}
-            className={`flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-medium border transition-all ${
-              isTtsEnabled 
-                ? 'bg-purple-600/30 border-purple-400 text-purple-200 shadow-purple-glow' 
-                : 'bg-purple-950/40 border-purple-500/20 text-purple-400 hover:border-purple-400/40'
-            }`}
-          >
-            <Sparkles className={`w-3.5 h-3.5 ${isTtsEnabled ? 'text-yellow-300 animate-spin' : ''}`} />
-            <span className="hidden sm:inline">{isTtsEnabled ? "Voice ON" : "Voice Narrate"}</span>
-          </button>
-        </div>
       </div>
 
       {/* Mobile sub-bar */}
