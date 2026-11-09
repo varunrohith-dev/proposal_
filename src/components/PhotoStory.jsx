@@ -240,16 +240,6 @@ export default function PhotoStory({
             <Edit3 className="w-3.5 h-3.5" />
             <span>{isEditingFrame ? "Done Editing" : "Edit Captions"}</span>
           </button>
-
-          {/* Studio Link */}
-          <button
-            onClick={onOpenStudio}
-            className="flex items-center gap-1.5 px-3 py-1.5 rounded-full glass-panel border border-purple-500/30 text-xs text-purple-200 hover:text-white hover:border-purple-300 transition-all"
-            title="Open 12-photo dashboard"
-          >
-            <Sliders className="w-3.5 h-3.5 text-purple-400" />
-            <span className="hidden md:inline">Photo Studio</span>
-          </button>
         </div>
       </div>
 

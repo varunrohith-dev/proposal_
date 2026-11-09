@@ -302,21 +302,14 @@ export default function OpeningLetter({
               </div>
             )}
 
-            {/* Bottom Buttons to Start Story */}
-            <div className="mt-8 pt-6 border-t border-purple-500/20 flex flex-col sm:flex-row items-center justify-between gap-4">
-              <button
-                onClick={onOpenStudio}
-                className="w-full sm:w-auto px-5 py-2.5 rounded-full border border-purple-400/30 text-purple-200 text-xs font-medium hover:bg-purple-900/40 hover:border-purple-300 transition-all flex items-center justify-center gap-2"
-              >
-                <span>🪄 Photo Studio & Categories</span>
-              </button>
-
+            {/* Bottom Button to Start Story */}
+            <div className="mt-8 pt-6 border-t border-purple-500/20 flex items-center justify-center">
               <button
                 onClick={() => {
                   romanticAudio.playHeartChime();
                   onStartStory();
                 }}
-                className="w-full sm:w-auto px-7 py-3 rounded-full bg-gradient-to-r from-purple-600 via-fuchsia-600 to-purple-600 text-white font-medium text-sm shadow-purple-glow-lg hover:shadow-purple-glow-intense hover:scale-105 transition-all flex items-center justify-center gap-2.5 group"
+                className="w-full sm:w-auto px-10 py-3.5 rounded-full bg-gradient-to-r from-purple-600 via-fuchsia-600 to-purple-600 text-white font-medium text-sm md:text-base shadow-purple-glow-lg hover:shadow-purple-glow-intense hover:scale-105 transition-all flex items-center justify-center gap-2.5 group"
               >
                 <span>Begin Our 12-Frame Story</span>
                 <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />

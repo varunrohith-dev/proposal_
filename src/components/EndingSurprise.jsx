@@ -208,14 +208,6 @@ export default function EndingSurprise({
             <BookOpen className="w-3.5 h-3.5" />
             <span>Re-read Love Letter</span>
           </button>
-
-          <button
-            onClick={onOpenStudio}
-            className="flex items-center gap-2 px-5 py-2.5 rounded-full glass-panel border border-purple-500/30 text-purple-200 text-xs font-medium hover:border-purple-300 hover:text-white transition-all"
-          >
-            <Sliders className="w-3.5 h-3.5 text-purple-400" />
-            <span>Photo Studio Dashboard</span>
-          </button>
         </div>
       </div>
     </div>

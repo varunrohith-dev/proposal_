@@ -111,10 +111,6 @@ export default function App() {
   const handlePreviewWebsite = () => {
     setCurrentIndex(0);
     setActiveView('story');
-    if (!isMusicPlaying) {
-      romanticAudio.startMelody();
-      setIsMusicPlaying(true);
-    }
   };
 
   return (
@@ -127,12 +123,8 @@ export default function App() {
       <Navbar
         activeView={activeView}
         setActiveView={setActiveView}
-        isMusicPlaying={isMusicPlaying}
-        toggleMusic={toggleMusic}
         isTtsEnabled={isTtsEnabled}
         toggleTts={toggleTts}
-        totalPhotos={photos.length}
-        categorizedCount={photos.length}
       />
 
       {/* Primary Content Router */}
