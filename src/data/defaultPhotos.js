@@ -49,119 +49,87 @@ export const DEFAULT_PHOTOS = [
     url: "/pics/photo-01.jpg",
     name: "01",
     category: "Solo Photo",
-    heading: "The Radiance in Your Eyes",
-    caption: "Even on the Brightest day, One look at you turns everything into a Smile ",
-    description: "Your elegance isn't just how you look; it's the gentle you bring into everystep into.",
-    tag: "The Brightest Glow of you!"
+    title: "Chapter 01",
+    text: "Indha birthday bouquet photo-va thirumbi paakumbodhu, namma andha moment-la nadandha evlo precious memories ellam nyabagam varudhu. 🥹💐  honestly, life enakku kudutha best surprise nee dhaan. ❤️✨. Oru simple moment-ah start aana namma bond, inniku en life-la rombave meaningful-ah maarirukku. 🫶 Evlo highs and lows vandhaalum, nee enakku oru comfort, en happiness-ku reason, enna sirikka vaikkura person!!  🥺💜"
   },
   {
     id: "frame-2",
     url: "/pics/photo-02.jpg",
-    name: "Memory 02",
+    name: "02",
     category: "Couple Photo",
-    title: "Two Hearts In Sync",
-    heading: "Where We Belong Together",
-    caption: "Holding you close is the only place in this huge world that truly feels like home.",
-    description: "Every second with you is etched into my heart, like stars painted permanently onto the night sky.",
-    tag: "Heart to Heart"
+    title: "Chapter 02",
+    text: "Un kannula oru chinna tear kooda vara koodadhunu dhaan naan eppovume wish pannuven. 🥺💜 Indha world-la endha pain-um un tears-ku worth illa. Nee eppovume happy-ah, peaceful-ah, andha beautiful smile-oda irukkanum. 🫶✨ Un smile-a vida azhagana vishayam enakku vera edhuvum illa. No pain in this world is worth your tears. 💜 Wishing you a lifetime where your smile never fades, not even for a second. 🥹💗 Un happiness dhaan enakku rombave important. Always keep smiling, because you deserve all the happiness in this world! 🧿💜"
   },
   {
     id: "frame-3",
     url: "/pics/photo-03.jpg",
-    name: "Memory 03",
+    name: "03",
     category: "Funny Photo",
-    title: "Pure Chaos & Sweet Laughter",
-    heading: "The Cutest Mischief Maker",
-    caption: "Who knew that someone so stunning could also make me laugh until my stomach hurts?",
-    description: "Your goofy smiles and silly moments are secretly my absolute favorite things in the universe.",
-    tag: "Giggle Therapy"
+    title: "Chapter 03",
+    text: "Indha photo namma rendu perukkum rombave special and unforgettable memories-la onnu. 🥹💜 Rendu perum exact-ah same shade dress match pannirundhadhu, andha moment-e oru different happiness-ah irundhuchu. 💗 Andha photo edukkurappo, un shoulder mela en kaiya vechappo, enakku kidaicha happiness-ah words-la complete-ah describe panna mudiyadhu🫶🏻. I don't just want memories with you; I want a lifetime of making them together. Holding on to each other, walking side by side, and choosing each other through every season of life. ♾️🧿💜"
   },
   {
     id: "frame-4",
     url: "/pics/photo-04.jpg",
-    name: "Memory 04",
+    name: "04",
     category: "Special Memory",
-    title: "A Night Under Midnight Whispers",
-    heading: "Moments Never Forgotten",
-    caption: "Some memories don't need words — they just echo softly forever in our memories.",
-    description: "A timestamp in our story where everything made sense, just because you were standing there with me.",
-    tag: "Timeless"
+    title: "Chapter 04",
+    text: "To the one whose smile lights up my world... 💜✨\n\nUn smile paakkumbodhu, enakku genuinely time stop aana maadhiri feel aagum. 🥹💜 Un eyes-la irukkura andha sparkle and un lips-la varra cute smile, enakku eppovume rombave special. 😍💗 Evlo busy-ah or stressful-ah irundhaalum, un smile paartha podhum, en mind full-ah peaceful-ah maaridum. 🫶 This world may be full of noise and chaos, but your smile is my favourite peace. 💜 Never lose that beautiful smile, because it means more to me than words could ever explain. 🧿💋"
   },
   {
     id: "frame-5",
     url: "/pics/photo-05.jpg",
-    name: "Memory 05",
+    name: "05",
     category: "Solo Photo",
-    title: "Effortlessly Enchanting",
-    heading: "Her Own Kind of Magic",
-    caption: "You have that rare kind of beauty that doesn't ask for attention, yet steals the whole spotlight.",
-    description: "Looking at this reminds me how lucky I am to know the kind, gentle, brilliant soul behind that smile.",
-    tag: "Starlight"
+    title: "Chapter 05",
+    text: "Nee kadavul mela nambikkai illa nu solluva... but un kannu munnadi irukkura enna nee eppovume nambalaam. 🥹💜 God unakku enna blessings kuduppaaro, adhellam ennaala mudinja alavukku unakku kudukka naan irukken🫂. Unakku enna aasai irundhaalum, enna happiness venumnaalum, adha fulfil panna ennaala mudinja ellathayum seiven. 🫶✨ I may not be God, but I'll always be someone you can count on, someone who stands beside you and takes care of you.  💜♾️🧿"
   },
   {
     id: "frame-6",
     url: "/pics/photo-06.jpg",
-    name: "Memory 06",
+    name: "06",
     category: "Couple Photo",
-    title: "Our Whispered Secrets",
-    heading: "Side by Side Through Everything",
-    caption: "Hand in hand, side by side, whatever tomorrow brings, I want it with you.",
-    description: "The simplest moments become cinematic masterpieces whenever your laughter fills the air.",
-    tag: "Together Forever"
+    title: "Chapter 06",
+    text: "Andha flowers-oda nee oru beautiful movie scene-la irundhu vandha maadhiri irundha. 🌸💜 Un outfit, hair-la irundha flowers, andha effortless beauty ellame enna completely mesmerise panniduchu🥹.  Unna photo edukkurappo, camera-la capture pannadhu just oru picture mattum illa, en kannukku nee evlo beautiful-ah therinja!! ✨💜"
   },
   {
     id: "frame-7",
     url: "/pics/photo-07.jpg",
-    name: "Memory 07",
+    name: "07",
     category: "Funny Photo",
-    title: "Cute, Crazy & Unstoppable",
-    heading: "That Priceless Look",
-    caption: "Never stop being your playful, wonderfully unhinged, adorable self!",
-    description: "Life with you is never dull. You bring color, spark, and sweet madness into my every day.",
-    tag: "Pure Joy"
+    title: "Chapter 07",
+    text: "Nee en mela kai vechcha andha exact moment-la, honestly, naan enna marandhutenn!!. 🥹💜 Everything around me disappeared, andha oru sec la naan rombave happy ah feel pannen. Sometimes, the smallest gestures create the biggest happiness apd nu solluvanga la adhu polaiye you gave me chinna chinna vishiyamaa !! 💜🧿"
   },
   {
     id: "frame-8",
     url: "/pics/photo-08.jpg",
-    name: "Memory 08",
+    name: "08",
     category: "Special Memory",
-    title: "The Golden Hour We Shared",
-    heading: "Drenched in Warmth",
-    caption: "The golden sunset was beautiful, but my eyes couldn't look anywhere except you.",
-    description: "A memory frozen in lavender hues and warm golden light — a chapter I would re-read forever.",
-    tag: "Golden Hour"
+    title: "Chapter 08",
+    text: "Unaku Sunflowers  evlo pudikkum nu theriyum.. 🌻💜 But honestly, en life la nee dhaan andha beautiful sunflower. Just like a sunflower always turns towards sunlight, en eyes-um eppovume unna dhaan thedum. 🥹✨ Evlo periya crowd-la nee irundhaalum, en paarvai first-ah unna dhaan find pannanum. Because for me, you're not just special, you're irreplaceable💕.  Unna maadhiri innoru person indha world la irukka mudiyadhu. You're my one and only sunflower, forever! 🌻🫶♾️"
   },
   {
     id: "frame-9",
     url: "/pics/photo-09.jpg",
-    name: "Memory 09",
+    name: "09",
     category: "Solo Photo",
-    title: "Innocence & Elegance",
-    heading: "A Glimpse Into Her World",
-    caption: "There is peace in your presence that washes away every worry.",
-    description: "You carry grace with such natural poise. You are truly one of a kind, Joma.",
-    tag: "Serenity"
+    title: "Chapter 09",
+    text: "Namma rendu perum different sides-la irundhaalum , oru vishayathula mattum same team dhaan... Vijay fan club! 😂❤️ Nee DMK support pannura, naan TVK support pannuren, but namma rendu perukkum favourite Thalapathy dhaan! 🥹🔥 And Politics la namma opinions different ah irukkalaam, but life la namma rendu perum always same side-la irukkanum. 🫶 Enakku venum nu aasai paduradhu onnu dhaan...  Not just for today, but till the very end. ♾️💜🧿"
   },
   {
     id: "frame-10",
     url: "/pics/photo-10.jpg",
-    name: "Memory 10",
+    name: "10",
     category: "Couple Photo",
-    title: "My Safe Haven",
-    heading: "Wrapped in Love",
-    caption: "Every love song made sense the moment your heart began beating near mine.",
-    description: "If I could relive any moment in time, I'd choose the ones wrapped safely in your embrace.",
-    tag: "My Shelter"
+    title: "Chapter 10",
+    text: "Nethu namma rendu perum serndhu temple-ku pona andha moment-lendhu, en heart la oru different kind of peace and happiness irukku. 🥹💜 I don't know how you felt at that moment, but temple kulla namma first step eduthu vechadhu lerndhe everything felt so peaceful and complete ah irundhuchu. ✨ Andha visit just oru beautiful memory ah mattum irukka koodadhunu naan aasai paduren. Next time namma rendu perum oru temple-kulla pogumbodhu, I want us to enter as husband and wife. 💜🥺"
   },
   {
     id: "frame-11",
     url: "/pics/photo-11.jpg",
-    name: "Memory 11",
+    name: "11",
     category: "Funny Photo",
-    title: "Unfiltered Bliss",
-    heading: "Spontaneous Adventures",
-    caption: "Because the best memories are the unplanned ones filled with loud laughter.",
-    description: "We might be silly, we might be crazy, but together we make the happiest team.",
-    tag: "Silly Souls"
+    title: "Chapter 11",
+    text: "Honestly, black colour unakku  rombave super ah irundhuchu . 🖤🥹 Un mela evlo eyes and drishti vizhum nu theriyadhu, but andha black dress un beauty-ku oru extra charm kudukkudhu, drishti-um pattuda koodadhunu oru chinna aasai. 🧿💜 Andha naal training centre-la nee full black dress-la vandha appo, exactly Remo movie scene la irundhu vandha maadhiri irundha! 😍 Unna paathadhum en eyes unna vittu vera pakkam pogave illa. I was just sitting there, silently admiring how gorgeous you looked.🫠🎀 Some looks stay in our memories forever, and that day is definitely one of them. 🫠💜"
   }
 ];

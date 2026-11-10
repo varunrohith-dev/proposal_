@@ -51,45 +51,44 @@ export default function EndingSurprise() {
         </div>
 
         {/* Main Emotional Heading */}
-        <h1 className="text-3xl md:text-6xl font-serifDisplay font-bold text-white tracking-wide leading-tight drop-shadow-[0_0_25px_rgba(168,85,247,0.5)]">
+        <h1 className="text-3xl md:text-5xl font-serifDisplay font-bold text-white tracking-wide leading-tight drop-shadow-[0_0_25px_rgba(168,85,247,0.5)]">
           My Heart Chose You, <br />
-          <span className="font-romantic text-5xl md:text-7xl bg-gradient-to-r from-purple-200 via-fuchsia-300 to-pink-300 bg-clip-text text-transparent">
+          <span className="font-romantic text-4xl md:text-6xl bg-gradient-to-r from-purple-200 via-fuchsia-300 to-pink-300 bg-clip-text text-transparent">
             Now & Always, Joma 💜
           </span>
         </h1>
 
-        <p className="text-purple-200/90 text-sm md:text-lg max-w-xl mx-auto font-sans leading-relaxed">
-          Eleven memories could never be enough to contain the love I hold for you. You are my quiet comfort, my loudest laughter, and my favorite tomorrow.
-        </p>
-
         {/* Emotional Forever Card */}
-        <div className="glass-panel-glow rounded-3xl p-6 md:p-10 border-2 border-purple-400/40 shadow-purple-glow-intense relative overflow-hidden my-6">
+        <div className="glass-panel-glow rounded-3xl p-6 md:p-10 border-2 border-purple-400/40 shadow-purple-glow-intense relative overflow-hidden my-6 text-left">
           
           {/* Animated pulsing heart in center */}
           <div className="flex justify-center mb-6">
-            <div className="relative flex items-center justify-center w-24 h-24 rounded-full bg-gradient-to-tr from-purple-600 via-fuchsia-600 to-pink-600 shadow-purple-glow-lg animate-pulse-glow">
-              <Heart className="w-12 h-12 text-white fill-white animate-bounce" />
+            <div className="relative flex items-center justify-center w-20 h-20 rounded-full bg-gradient-to-tr from-purple-600 via-fuchsia-600 to-pink-600 shadow-purple-glow-lg animate-pulse-glow">
+              <Heart className="w-10 h-10 text-white fill-white animate-bounce" />
             </div>
           </div>
 
-          <div className="space-y-6">
-            <h2 className="text-xl md:text-3xl font-serifDisplay font-semibold text-white">
-              "Will you walk through all of life's chapters by my side?"
-            </h2>
-            <p className="font-romantic text-2xl md:text-3xl text-purple-200 max-w-lg mx-auto">
-              No matter where life takes us, through every storm and every sunshine... I promise to love you more with every heartbeat.
+          {/* Custom Grand Finale Text Box */}
+          <div className="space-y-4 text-sm md:text-base text-purple-100/95 leading-relaxed tracking-wide font-sans">
+            <p>
+              Unkitta ethana vaati solliruppen nu enakke count theriyala... but honestly, un heart-lendhu varra andha one simple phrase, &ldquo;I Love You&rdquo; kekkuradhukkaaga dhaan naan ivlo naala wait pannittu irukken. 🥺💜 Nee en kaiya strong-ah pudichittu, &ldquo;You&apos;re the one for me&rdquo; nu oru vaati sonna podhum, enakku adha vida periya happiness vera edhuvum illa. 🫶
             </p>
 
-            {/* Secret Love Note */}
-            <div className="mt-6 p-5 rounded-2xl bg-gradient-to-r from-purple-950/80 to-fuchsia-950/80 border border-purple-400/40 text-left space-y-2 shadow-lg">
-              <span className="text-xs font-mono uppercase text-purple-400 tracking-wider">
-                ✦ Midnight Whisper:
-              </span>
-              <p className="font-romantic text-2xl text-purple-100 leading-relaxed">
-                "I loved you yesterday, I love you still, I always have, I always will. When you smile at me, Joma, nothing else in the world matters."
-              </p>
-              <p className="text-right text-xs text-purple-300/80 font-sans">
-                — Crafted with endless devotion for Jo ma 💜
+            <p>
+              Family situations-ah irukkattum, doubts-ah irukkattum, illa life-la evlo struggles vandhaalum, I&apos;ll stand by you and face every obstacle together. Idhellam just words illa, it&apos;s a promise from the bottom of my heart. 💜
+            </p>
+
+            <p>
+              Evlo difficult situation vandhaalum unna vittu pogavum maatten, un trust-ah eppovume break pannavum maatten. You&apos;re someone incredibly special to me, and I genuinely want you beside me until my last breath. 💜♾️🧿
+            </p>
+
+            <p className="font-medium text-fuchsia-200 pt-2 border-t border-purple-500/20">
+              En heart wait pannittu irukkuradhu ore oru vishayathukkaga dhaan... one day, un lips-lerndhu andha &ldquo;I Love You&rdquo; kekkanum. 🥹💜🫂
+            </p>
+
+            <div className="pt-4 text-right">
+              <p className="font-romantic text-2xl text-fuchsia-300 drop-shadow-[0_0_10px_rgba(236,72,153,0.7)]">
+                — Aravind 💜
               </p>
             </div>
           </div>

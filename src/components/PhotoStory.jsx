@@ -219,31 +219,26 @@ export default function PhotoStory({
             {/* Right: Romantic Story */}
             <div className="lg:col-span-5 p-6 md:p-8 flex flex-col justify-between bg-gradient-to-b from-[#130526]/90 to-[#0a0215]/95 backdrop-blur-md border-t lg:border-t-0 lg:border-l border-purple-500/20">
               
-              <div className="space-y-5 my-auto">
-                {/* Title */}
-                <div>
-                  <h2 className="text-2xl md:text-3xl font-serifDisplay font-bold text-white tracking-wide leading-snug">
-                    {currentPhoto.title}
-                  </h2>
-                  <h3 className="text-sm font-sans font-medium text-purple-300/80 mt-1">
-                    {currentPhoto.heading}
-                  </h3>
+              <div className="space-y-4 my-auto">
+                {/* Chapter Title Badge */}
+                <div className="flex items-center gap-2">
+                  <span className="px-3 py-1 rounded-full text-xs font-semibold bg-purple-900/60 border border-purple-400/40 text-purple-200">
+                    {currentPhoto.title || `Chapter ${String(currentIndex + 1).padStart(2, '0')}`}
+                  </span>
+                  <span className="text-xs font-mono text-purple-400/70 tracking-wider">
+                    ✦ Memory {currentIndex + 1} of {total}
+                  </span>
                 </div>
 
-                {/* Romantic Caption Quote */}
-                <div className="relative pl-4 border-l-2 border-purple-400/60 py-1">
-                  <p className="font-romantic text-2xl md:text-3xl text-purple-200 tracking-wide leading-relaxed">
-                    "{currentPhoto.caption}"
+                {/* Custom Text Box */}
+                <div className="relative pl-4 border-l-2 border-purple-400/60 py-2">
+                  <p className="text-sm md:text-base text-purple-100/95 leading-relaxed tracking-wide whitespace-pre-line font-sans">
+                    {currentPhoto.text || currentPhoto.caption}
                   </p>
                 </div>
 
-                {/* Description */}
-                <div className="pt-2 text-xs md:text-sm text-purple-200/80 leading-relaxed font-sans">
-                  <p>{currentPhoto.description}</p>
-                </div>
-
                 {/* Gentle reminder */}
-                <div className="pt-3 flex items-center gap-2 text-[11px] text-purple-300/50">
+                <div className="pt-2 flex items-center gap-2 text-[11px] text-purple-300/50">
                   <Sparkles className="w-3 h-3 text-purple-400" />
                   <span>Memory dedicated to Joma with all my heart</span>
                 </div>
