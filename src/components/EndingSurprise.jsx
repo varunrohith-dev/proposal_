@@ -1,13 +1,18 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import confetti from 'canvas-confetti';
 import { 
   Heart, 
   Sparkles, 
-  Crown
+  Crown,
+  Volume2,
+  VolumeX
 } from 'lucide-react';
 import { romanticAudio } from '../utils/audioSynthesizer';
 
 export default function EndingSurprise() {
+  const audioRef = useRef(null);
+  const [isPlaying, setIsPlaying] = useState(true);
+
   // Trigger romantic purple & golden confetti shower
   const launchFireworks = () => {
     romanticAudio.playHeartChime();
@@ -33,11 +38,66 @@ export default function EndingSurprise() {
 
   useEffect(() => {
     launchFireworks();
+
+    // Auto-play the uploaded background song
+    if (audioRef.current) {
+      audioRef.current.currentTime = 0;
+      audioRef.current.volume = 0.9;
+      const playPromise = audioRef.current.play();
+      if (playPromise !== undefined) {
+        playPromise
+          .then(() => {
+            setIsPlaying(true);
+          })
+          .catch((err) => {
+            console.warn("Autoplay was prevented by browser policy:", err);
+            setIsPlaying(false);
+          });
+      }
+    }
+
+    // Fallback: If autoplay was prevented, start on the first user interaction
+    const handleFirstInteraction = () => {
+      if (audioRef.current && audioRef.current.paused) {
+        audioRef.current.play()
+          .then(() => setIsPlaying(true))
+          .catch(() => {});
+      }
+    };
+    window.addEventListener('click', handleFirstInteraction, { once: true });
+    window.addEventListener('touchstart', handleFirstInteraction, { once: true });
+
+    return () => {
+      window.removeEventListener('click', handleFirstInteraction);
+      window.removeEventListener('touchstart', handleFirstInteraction);
+      if (audioRef.current) {
+        audioRef.current.pause();
+      }
+    };
   }, []);
+
+  const toggleAudio = (e) => {
+    e.stopPropagation();
+    if (!audioRef.current) return;
+    if (isPlaying) {
+      audioRef.current.pause();
+      setIsPlaying(false);
+    } else {
+      audioRef.current.play().then(() => setIsPlaying(true)).catch(() => {});
+    }
+  };
 
   return (
     <div className="min-h-[88vh] flex flex-col items-center justify-center p-4 relative z-10 animate-fade-in">
       
+      {/* Background song audio element */}
+      <audio
+        ref={audioRef}
+        src="/music/finale.mp3"
+        loop
+        preload="auto"
+      />
+
       {/* Background glow orbs */}
       <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-96 h-96 bg-purple-600/25 rounded-full blur-[130px] pointer-events-none" />
 
@@ -86,7 +146,26 @@ export default function EndingSurprise() {
               En heart wait pannittu irukkuradhu ore oru vishayathukkaga dhaan... one day, un lips-lerndhu andha &ldquo;I Love You&rdquo; kekkanum. 🥹💜🫂
             </p>
 
-            <div className="pt-4 text-right">
+            <div className="pt-4 flex items-center justify-between">
+              {/* Audio Play/Pause indicator */}
+              <button
+                onClick={toggleAudio}
+                className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-purple-950/60 border border-purple-400/30 text-purple-200 text-xs hover:border-purple-300 transition-all shadow-sm"
+                title={isPlaying ? "Mute Background Song" : "Play Background Song"}
+              >
+                {isPlaying ? (
+                  <>
+                    <Volume2 className="w-3.5 h-3.5 text-pink-400 animate-pulse" />
+                    <span className="text-[11px] font-mono text-purple-300">Song Playing 🎵</span>
+                  </>
+                ) : (
+                  <>
+                    <VolumeX className="w-3.5 h-3.5 text-purple-400" />
+                    <span className="text-[11px] font-mono text-purple-400">Play Song 🎵</span>
+                  </>
+                )}
+              </button>
+
               <p className="font-romantic text-2xl text-fuchsia-300 drop-shadow-[0_0_10px_rgba(236,72,153,0.7)]">
                 — Aravind 💜
               </p>
