@@ -32,9 +32,6 @@ export default function Navbar({
               </span>
               <span className="text-purple-400 text-sm">💜</span>
             </div>
-            <p className="text-[10px] text-purple-300/70 uppercase tracking-widest font-mono">
-              Eternal Romance
-            </p>
           </div>
         </div>
 

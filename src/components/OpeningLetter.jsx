@@ -24,21 +24,6 @@ export default function OpeningLetter({
       {/* Background glow orbs */}
       <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-80 h-80 bg-purple-600/20 rounded-full blur-[100px] pointer-events-none" />
 
-      {/* Top greeting badge */}
-      <div className="mb-6 text-center animate-fade-in">
-        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass-panel border border-purple-400/30 text-purple-200 text-xs tracking-wider uppercase mb-2 shadow-purple-glow">
-          <Sparkles className="w-3.5 h-3.5 text-purple-300" />
-          <span>A Dedicated Romantic Gift For Joma</span>
-          <Sparkles className="w-3.5 h-3.5 text-purple-300" />
-        </div>
-        <h1 className="text-3xl md:text-5xl font-serifDisplay font-bold text-white tracking-wide">
-          Every Moment With You Is Magic
-        </h1>
-        <p className="text-purple-300/80 text-sm md:text-base mt-2 max-w-lg mx-auto">
-          Tap the sealed letter below to uncover the words written only for your eyes...
-        </p>
-      </div>
-
       {!isOpen ? (
         /* Envelope Closed State */
         <div 
