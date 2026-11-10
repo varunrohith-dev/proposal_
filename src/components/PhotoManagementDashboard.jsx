@@ -136,9 +136,9 @@ export default function PhotoManagementDashboard({
     setDraggedIndex(null);
   };
 
-  // Reset to default 12 photos
+  // Reset to default 11 photos
   const handleResetDefaults = () => {
-    if (window.confirm("Reset all 12 photos and captions to initial defaults?")) {
+    if (window.confirm("Reset all 11 photos and captions to initial defaults?")) {
       setPhotos(DEFAULT_PHOTOS);
       romanticAudio.playHeartChime();
     }
@@ -229,10 +229,10 @@ export default function PhotoManagementDashboard({
               <span>Intelligent Photo Management Studio</span>
             </div>
             <h1 className="text-2xl md:text-4xl font-serifDisplay font-bold text-white tracking-wide">
-              Customize Your 12 Romantic Chapters
+              Customize Your 11 Romantic Chapters
             </h1>
             <p className="text-purple-300/80 text-xs md:text-sm mt-1 max-w-2xl leading-relaxed">
-              Upload all 12 photos together or individually. Manually categorize each picture into <span className="text-pink-300 font-semibold">Solo</span>, <span className="text-purple-300 font-semibold">Couple</span>, <span className="text-amber-300 font-semibold">Funny</span>, or <span className="text-violet-300 font-semibold">Special Memory</span>. Edit titles, captions, and descriptions. Drag & drop to arrange the exact sequence before previewing!
+              Upload all 11 photos together or individually. Manually categorize each picture into <span className="text-pink-300 font-semibold">Solo</span>, <span className="text-purple-300 font-semibold">Couple</span>, <span className="text-amber-300 font-semibold">Funny</span>, or <span className="text-violet-300 font-semibold">Special Memory</span>. Edit titles, captions, and descriptions. Drag & drop to arrange the exact sequence before previewing!
             </p>
           </div>
 
@@ -304,9 +304,9 @@ export default function PhotoManagementDashboard({
         <div className="flex items-center gap-2 text-xs text-purple-300/80">
           <div className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
           <span>Showing <strong>{displayPhotos.length}</strong> of <strong>{photos.length}</strong> Frames</span>
-          {photos.length === 12 && (
+          {photos.length === 11 && (
             <span className="inline-flex items-center gap-1 text-[11px] text-emerald-300 bg-emerald-950/50 px-2 py-0.5 rounded-md border border-emerald-500/30">
-              <CheckCircle2 className="w-3 h-3" /> Exact 12 Ready!
+              <CheckCircle2 className="w-3 h-3" /> Exact 11 Ready!
             </span>
           )}
           {filterCategory !== 'All' && (
@@ -368,7 +368,7 @@ export default function PhotoManagementDashboard({
           <button
             onClick={handleResetDefaults}
             className="flex items-center gap-1 px-3 py-1.5 rounded-xl border border-purple-500/30 text-purple-300 text-xs hover:bg-purple-900/30 hover:text-white transition-all"
-            title="Reset to 12 original images and captions"
+            title="Reset to 11 original images and captions"
           >
             <RotateCcw className="w-3 h-3" />
             <span>Reset Defaults</span>

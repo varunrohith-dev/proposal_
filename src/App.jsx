@@ -15,7 +15,7 @@ export default function App() {
   // Photos state with localStorage persistence
   const [photos, setPhotos] = useState(() => {
     try {
-      const saved = localStorage.getItem('joma_photos_v2');
+      const saved = localStorage.getItem('joma_photos_v3');
       if (saved) {
         const parsed = JSON.parse(saved);
         if (Array.isArray(parsed) && parsed.length > 0) return parsed;
@@ -29,7 +29,7 @@ export default function App() {
   // Letter state with localStorage persistence
   const [letterData, setLetterData] = useState(() => {
     try {
-      const saved = localStorage.getItem('joma_letter_v2');
+      const saved = localStorage.getItem('joma_letter_v3');
       if (saved) {
         return JSON.parse(saved);
       }
@@ -46,7 +46,7 @@ export default function App() {
   // Sync photos to localStorage
   useEffect(() => {
     try {
-      localStorage.setItem('joma_photos_v2', JSON.stringify(photos));
+      localStorage.setItem('joma_photos_v3', JSON.stringify(photos));
     } catch (e) {
       // ignore quota exceeded for very large blob urls
     }
@@ -55,7 +55,7 @@ export default function App() {
   // Sync letter to localStorage
   useEffect(() => {
     try {
-      localStorage.setItem('joma_letter_v2', JSON.stringify(letterData));
+      localStorage.setItem('joma_letter_v3', JSON.stringify(letterData));
     } catch (e) {
       console.warn(e);
     }
@@ -157,15 +157,7 @@ export default function App() {
         )}
 
         {activeView === 'surprise' && (
-          <EndingSurprise
-            onRestartStory={() => {
-              setCurrentIndex(0);
-              setActiveView('story');
-            }}
-            onOpenStudio={() => setActiveView('manage')}
-            onOpenLetter={() => setActiveView('letter')}
-            speakText={speakText}
-          />
+          <EndingSurprise />
         )}
       </main>
 
@@ -174,7 +166,7 @@ export default function App() {
         <p className="flex items-center justify-center gap-1.5">
           <span>Created with eternal love for Joma</span>
           <span className="text-purple-400">💜</span>
-          <span>• 12 Chapters of Our Story</span>
+          <span>• 11 Chapters of Our Story</span>
         </p>
       </footer>
     </div>

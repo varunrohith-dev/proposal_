@@ -142,7 +142,7 @@ export default function OpeningLetter({
                 }}
                 className="w-full sm:w-auto px-10 py-3.5 rounded-full bg-gradient-to-r from-purple-600 via-fuchsia-600 to-purple-600 text-white font-medium text-sm md:text-base shadow-purple-glow-lg hover:shadow-purple-glow-intense hover:scale-105 transition-all flex items-center justify-center gap-2.5 group"
               >
-                <span>Begin Our 12-Frame Story</span>
+                <span>Begin Our 11-Frame Story</span>
                 <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
               </button>
             </div>

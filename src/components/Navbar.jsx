@@ -61,7 +61,7 @@ export default function Navbar({
             }`}
           >
             <Camera className="w-3.5 h-3.5" />
-            <span>Photo Story (12 Frames)</span>
+            <span>Photo Story (11 Frames)</span>
           </button>
 
           <button
@@ -90,7 +90,7 @@ export default function Navbar({
           onClick={() => setActiveView('story')}
           className={`px-3 py-1 rounded-md ${activeView === 'story' ? 'text-purple-300 font-bold bg-purple-900/30' : 'text-purple-400/80'}`}
         >
-          📸 Story (12)
+          📸 Story (11)
         </button>
         <button
           onClick={() => setActiveView('surprise')}

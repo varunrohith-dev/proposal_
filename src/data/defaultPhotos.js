@@ -163,16 +163,5 @@ export const DEFAULT_PHOTOS = [
     caption: "Because the best memories are the unplanned ones filled with loud laughter.",
     description: "We might be silly, we might be crazy, but together we make the happiest team.",
     tag: "Silly Souls"
-  },
-  {
-    id: "frame-12",
-    url: "/pics/photo-12.jpg",
-    name: "Memory 12",
-    category: "Special Memory",
-    title: "The Promise of Tomorrow",
-    heading: "Our Journey Just Begun",
-    caption: "Twelve memories are just the beginning. I want a lifetime of million more with you.",
-    description: "Thank you for being my person, my joy, and my greatest dream come true.",
-    tag: "Infinite Love"
   }
 ];
