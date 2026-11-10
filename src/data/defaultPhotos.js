@@ -34,29 +34,25 @@ export const CATEGORIES = [
 ];
 
 export const INITIAL_LETTER = {
-  greeting: "Hi Jo ma! 💜",
-  subtitle: "A little love letter written from the depths of my soul...",
+  greeting: " Jo ma! 💜",
+  subtitle: "En kaadhaliye! ",
   paragraphs: [
-    "To my prettiest soul, my forever favorite human, and the light that softens every shadow in my world.",
-    "I created this haven of memories just for you — to capture every smile that made my heart race, every laughter we shared under midnight skies, and every quiet second where time paused just for us.",
-    "Walk with me through our twelve chapters. Every frame holds a piece of my heart that belongs entirely to you.",
-    "Whenever you are ready, turn the page and let our journey unfold..."
+    "First of all , Na indha company ku lam naa select aaven nu nenaikave illa first!!🥹. Aana select aaitu konja naal la than na ennoda Jo ma🌷💋! va paathu and sirichikitten enakullaiye aana adhu ennamo mathavanga paithiyam nu than solluvanga😭🫂. But , enaku andha time la enaku ennamo ennaiya romba santhosama paatha maari irunndhuchu. Unna paatha next min na enna yosichen na , enakaava iva than apd nu thonuchu🙂‍↔️💜, adhuku aprm pesa try pannalaam nu vara apo neraiya time miss aairuchu🚶🏻. Unake theriyama unna na neraiya time sight adichiruken maa.!! Everytime when I see u , I may look myself and oru vekkam varum paaru!!. Apde enake ennaiya paakura apo siripa irukum😁🙈. Athey mind oda the next na yoisichathu aprm unkooda pazhaga start pannathu. Aprm konjam konjam ah pesa aaramichana, Aprm poga poga enaku unkitta solla varla  adhunala adhu reels vazhiya unaku theriya paduthalam nu pannen ipovum pannitu iruken!!!. Enaku ennamo nee enkooda life long travel pannanum nu enaku thonum , ipovum thonite iruku!!🫠. Unkoooda irukumbodhu naa rombave happy ah feel panren!.. I need to create long long years of memories with you and Ennala I'cant able to see u as a friend.. unna apd vachi enaku paakave mudila. Nee ennoda Love ah🫂 , En pondaati ah🫂 , En thunaivi ah🫂 , Ennoda future ah naa unnna paakuren!! 🫠🫶🏻, till my last breath unna kannu kalangaama vachi paathupen maa!!💜💋."
   ],
   closing: "Forever & Always Yours,",
-  signature: "With All My Love 💜"
+  signature: "Aravind 💜"
 };
 
 export const DEFAULT_PHOTOS = [
   {
     id: "frame-1",
     url: "/pics/photo-01.jpg",
-    name: "Memory 01",
+    name: "01",
     category: "Solo Photo",
-    title: "Pure Grace & Soft Sunshine",
     heading: "The Radiance in Your Eyes",
-    caption: "Even on the quietest day, one look at you turns everything into poetry.",
-    description: "Your elegance isn't just how you look; it's the gentle warmth you bring into every room you step into.",
-    tag: "Eternal Glow"
+    caption: "Even on the Brightest day, One look at you turns everything into a Smile ",
+    description: "Your elegance isn't just how you look; it's the gentle you bring into everystep into.",
+    tag: "The Brightest Glow of you!"
   },
   {
     id: "frame-2",
